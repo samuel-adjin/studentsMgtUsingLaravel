@@ -63,6 +63,7 @@
 
     <div class="mt-5">
         @yield('content')
+        
     </div>
 
 

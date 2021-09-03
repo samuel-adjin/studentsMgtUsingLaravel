@@ -6,10 +6,10 @@
 <div class=" bg-blue-400 w-full">
 
     <div class=" text-center flex justify-center text-gray-100 text-4xl  items-center tracking-wider font-bold pt-20 pb-10">
-        Java Essentials
+        {{ $enrol->title }}
     </div>
     <div class=" text-center flex justify-center text-gray-100 text-2xl items-center tracking-wider">
-        The Java Skills you need to build software
+        {{ $enrol->description }}
     </div>
 
     <div class=" flex justify-center gap-2 pb-20  items-center pt-20">
@@ -23,16 +23,32 @@
                     Watch Promo
                 </div>
             </div>
-            <div id="enrol" class=" rounded-full w-96 text-lg h-14  bg-red-500 p-3  cursor-pointer flex gap-2 justify-center items-center hover:shadow-lg hover:opacity-85" >
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" id= "cart" class="h-5 w-5 text-gray-100" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                          </svg>
-                    </div>
-                    <div class=" text-gray-100 font-bold tracking-wide   " >
-                       <h3 id="enrol_text"> Enroll in course for <span>GHS300</span></h3>
-                    </div>
-            </div>
+
+             <form action="{{ route('enrolled', $enrol->id) }}" method="post">
+                @csrf
+                <button type="submit" id="enrol">
+                    <div type  class=" rounded-full w-96 text-lg h-14  bg-red-500 p-3  cursor-pointer flex gap-2 justify-center items-center hover:shadow-lg hover:opacity-85 " >
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" id= "cart" class="h-5 w-5 text-gray-100" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                              </svg>
+                        </div>
+                        <div class=" text-gray-100 font-bold tracking-wide   " >
+                           <h3 id="enrol_text"> Enroll in course for <span class="">GHs {{ $enrol->price }}</span></h3>
+                        </div>
+                </div>
+                </button>
+            </form>
+
+            {{-- <form action="{{ route('enrolled', $enrol->id) }}" method="post">
+               <button type="submit">Hello</button> @csrf
+
+
+            </form> --}}
+
+
+
+
     </div>
 </div>
 <div class=" w-full bg-white  ">

@@ -26,4 +26,6 @@ class Course extends Model
     {
         return $this->hasMany(enrolCourse::class);
     }
+
+
 }

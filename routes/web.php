@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\MycourseController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ViewCourseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,13 +43,20 @@ Route::post('register',[RegisterController::class,'store']);
 
 
 Route::get('course/enrol',[EnrolController::class,'index'])->name('enrol');
+Route::post('enrol/{id}',[EnrolController::class,'store'])->name('enrolled');
+
 
 Route::get('mycourses',[MycourseController::class,'index'])->name('mycourses');
+Route::get('mycourses/filter-courses',[MycourseController::class,'filterByCourseTitle'])->name('filter');
+
 
 
 Route::get('/home',[CourseController::class,'index'])->name('home');
 Route::post('course',[CourseController::class,'store']);
+
 Route::get('course',[CourseController::class,'search'])->name('search');
+
 Route::get('logout',[LogoutController::class,'logout'])->name('logout');
 
+Route::get('view/{id}',[CourseController::class,'viewCourse'])->name('view.course');
 

@@ -18,8 +18,8 @@
                 <li class="   pb-1 px-4 h-8 hover:bg-gray-50 mt-4 ">
                     <a href="">All</a>
                 </li>
-                @if ($course->count())
-                @foreach ($course as $courses )
+                @if ($filter->count())
+                @foreach ($filter as $courses )
                 <li class="   pb-2 px-4 h-8 hover:bg-gray-50 mt-2 ">
                     <a href="">{{ $courses->title }}</a>
                 </li>
@@ -75,8 +75,8 @@
     <div  class=" grid grid-cols-3  cursor-pointer    mx-36  ">
 
 
-        @if ( isset($course) )
-        @foreach ($course as $courses )
+        @if ( isset($filter) )
+        @foreach ($filter as $courses )
 
                 <a href="{{ route('view.course',$courses->id) }}" >
                     <div class=" w-80  mt-10 p-1  bg-white  shadow-sm rounded-sm  hover:shadow-2xl "  >
@@ -153,7 +153,7 @@
 </div>
 
             <div class=" mx-36 mt-52 ">
-               <h3 class=" text-lg">{{ $course->links() }}</h3>
+               <h3 class=" text-lg">{{ $filter->links() }}</h3>
             </div>
    </div>
 

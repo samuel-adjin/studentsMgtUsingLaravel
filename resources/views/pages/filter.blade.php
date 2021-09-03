@@ -18,8 +18,8 @@
 
 <div class="ml-20 cursor-pointer  mb-36 ">
     <div class="grid grid-cols-3 hover:text-red-600">
-        @if ($enrolled->count())
-            @foreach ($enrolled as $enrol )
+        @if ($courses->count())
+            @foreach ($courses as $enrol )
             <div class=" w-96   p-2  bg-gray-50  mb-5  rounded-lg  hover:shadow-2xl  ">
                 <img src="{{ asset('images/'.$enrol->course->image) }}" alt="" class="w-96 rounded-sm">
                 <div class="  flex justify-center items-center pt-5 font-bold tracking-wide capitalize text-gray-600 text-lg ">
@@ -52,7 +52,7 @@
     </div>
 </div>
 <div class=" mx-36 mt-52 ">
-    <h3 class=" text-lg">{{ $enrolled->links() }}</h3>
+    {{-- <h3 class=" text-lg">{{ $courses->links() }}</h3> --}}
  </div>
 
 

@@ -11,7 +11,7 @@ class AddcourseController extends Controller
     public function index()
 
     {
-        $course = Course::paginate('10');
+        $course = Course::paginate('5');
         return view('adminpages.addcourses',[
             'course'=>$course
         ]);

@@ -18,6 +18,7 @@ function enrolled()
         enrol_text.innerText ='Enrolled'
         enrol.classList.add('opacity-100')
         cart.classList.add('hidden')
+        // enrol.classList.add('cursor-not-allowed')
 }
 
 function test()
